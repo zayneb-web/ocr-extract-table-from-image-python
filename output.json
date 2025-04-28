@@ -1,0 +1,28 @@
+{
+    "receipts": [
+        {
+            "assurance": "",
+            "n_du_contrat": "",
+            "numero_quittance": "24406765",
+            "risque": "INCENDIE",
+            "prime": "",
+            "cout_de_contrat": "",
+            "taxes": "",
+            "fg": "",
+            "total": "",
+            "sommes_a_payer": "",
+            "code": "",
+            "per": "STR",
+            "periode_d'assurance": {
+                "date_debut": "30/05/2024",
+                "date_fin": "31/07/2044"
+            },
+            "assure": {
+                "nom_et_prenom": "MAKREM BEN AMMAR",
+                "adresse": "18RUEMAKTA",
+                "code_postal": "",
+                "ville": ""
+            }
+        }
+    ]
+}

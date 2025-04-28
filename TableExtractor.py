@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import os
 
 class TableExtractor:
 
@@ -48,7 +49,12 @@ class TableExtractor:
         self.inverted_image = cv2.bitwise_not(self.thresholded_image)
 
     def dilate_image(self):
-        self.dilated_image = cv2.dilate(self.inverted_image, None, iterations=5)
+        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
+        self.dilated_image = cv2.dilate(self.inverted_image, kernel, iterations=2)
+        output_dir = "image"
+        os.makedirs(output_dir, exist_ok=True)
+        cv2.imwrite(os.path.join(output_dir, "dilated_image_test.jpg"), self.dilated_image)
+        print("Dilation applied and image saved")
 
     def find_contours(self):
         self.contours, self.hierarchy = cv2.findContours(self.dilated_image, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -59,7 +65,7 @@ class TableExtractor:
         self.rectangular_contours = []
         for contour in self.contours:
             peri = cv2.arcLength(contour, True)
-            approx = cv2.approxPolyDP(contour, 0.02 * peri, True)
+            approx = cv2.approxPolyDP(contour, 0.01 * peri, True)
             if len(approx) == 4:
                 self.rectangular_contours.append(approx)
         self.image_with_only_rectangular_contours = self.image.copy()

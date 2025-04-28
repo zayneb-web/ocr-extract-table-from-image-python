@@ -1,0 +1,28 @@
+{
+    "receipts": [
+        {
+            "assurance": "",
+            "n_du_contrat": "",
+            "numero_quittance": "",
+            "risque": "",
+            "prime": "",
+            "cout_de_contrat": "",
+            "taxes": "",
+            "fg": "",
+            "total": "",
+            "sommes_a_payer": "",
+            "code": "",
+            "per": "",
+            "periode_d'assurance": {
+                "date_debut": "",
+                "date_fin": ""
+            },
+            "assure": {
+                "nom_et_prenom": "",
+                "adresse": "",
+                "code_postal": "",
+                "ville": ""
+            }
+        }
+    ]
+}
